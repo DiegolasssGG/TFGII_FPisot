@@ -257,11 +257,4 @@ class MapBloc extends Bloc<MapEvent, MapState> {
       markers: {},
     ));
   }
-
-  @override
-  Future<void> close() async {
-    log.i('Cerrando MapBloc y cancelando suscripción de localización.');
-    await locationSubscription?.cancel();
-    await super.close();
-  }
 }
